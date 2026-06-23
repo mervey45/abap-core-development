@@ -13,7 +13,7 @@ author_profile: https://github.com/MatthaeusSchuele
 <!-- description --> Find out what to do if a C1-released SAP data source (aka CDS view) does not expose a required database table field that you want to read in Cloud Development (ABAP Cloud Development). For example, data source I_SalesOrder only exposes roughly half of the fields of database table vbak.
 
 ## Prerequisites
-- You have a license for an SAP S/4HANA or SAP S/4HANA Cloud, private edition release 2023 (both referred to as SAP S/4HANA from now on)
+- You have a license for an SAP S/4HANA or SAP S/4HANA Cloud, private edition release 2025 (both referred to as SAP S/4HANA from now on)
 - You have a user in the system with full development authorizations and business role `SAP_BR_SALES_MANAGER`
 - [You are connected to your SAP S/4HANA system in ABAP Development Tools for Eclipse (ADT)](abap-s4hanacloud-login)
 - You understand the Clean Core Extensibility Guide, see SAP blog [ABAP Extensibility Guide – Clean Core for SAP S/4HANA Cloud - August 2025 Update](https://community.sap.com/t5/technology-blog-posts-by-sap/abap-extensibility-guide-clean-core-for-sap-s-4hana-cloud-august-2025/ba-p/14175399)
@@ -30,7 +30,7 @@ author_profile: https://github.com/MatthaeusSchuele
 - How to extend a data source that is not released for extend (case 3)
 
 **Additional info**
->Tutorial last updated with SAP S/4HANA release 2023 FPS03
+>Tutorial last updated with SAP S/4HANA release 2025, Fully-Activated Appliance.
 
 ---
 
