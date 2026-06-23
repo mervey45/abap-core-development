@@ -54,7 +54,7 @@ To produce and raise an event you need first to define your RAP Business Object 
       <!-- border -->
       ![step1c-new-tr](step1c-new-tr.png)
 
-  3. Select your package and choose **New > Other Repository object > Database table** from the context menu. Enter the following.
+3. Select your package and choose **New > Other Repository object > Database table** from the context menu. Enter the following.
 
       - Name: `ZONLINESHOP_###`
       - Description: `Database table for Online Shop`
@@ -63,7 +63,7 @@ To produce and raise an event you need first to define your RAP Business Object 
       ![step1d-create-db-table](step1d-create-db-table.png)
 
 
-  4. Copy the code below to the Database and replace `###` with your number. 
+4. Copy the code below to the Database and replace `###` with your number. 
       
   > You need the Admin field(s) for `local_last_changed` and `last_changed` in the table, in order to use the ABAP Repository Objects Generator later. These fields are used to provide optimistic concurrency control, using ETags. For more information, see: [ETag Definition | SAP Help](https://help.sap.com/docs/ABAP_PLATFORM_NEW/fc4c71aa50014fd1b43721701471913d/74b16803910d4939a83f354259fca4fc.html)
 

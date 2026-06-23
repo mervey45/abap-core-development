@@ -126,7 +126,7 @@ Create a database table to store the Travel data. This Travel table contains `Tr
     }
     ```
 
-  6. Save ![save icon](save.png) and activate ![activate icon](activate.png) the changes.
+6. Save ![save icon](save.png) and activate ![activate icon](activate.png) the changes.
 
 ### Create data generator class
 

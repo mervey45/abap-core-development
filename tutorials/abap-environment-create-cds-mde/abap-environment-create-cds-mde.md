@@ -46,7 +46,7 @@ For more information on creating a read-only app, see the SAP Help Portal: [Deve
     <!-- border -->
     ![step1a-new-package](step1a-new-package.png)
 
-    2. Enter the following then follow the wizard, choosing a **new** transport request:
+2. Enter the following then follow the wizard, choosing a **new** transport request:
     - Name: **`Z_ENHANCE_CDS_###`**
     - Description **Enhance CDS Tutorial 2020**
 
@@ -63,7 +63,7 @@ For more information on creating a read-only app, see the SAP Help Portal: [Deve
     <!-- border -->
     ![step2a-new-cds](step2a-new-cds.png)
 
-    2. Add the following:
+2. Add the following:
         - Name: **`Z_I_TRAVEL_R_###`**
         - Description: **`Travel Model View Entity - Read Only`**
         - Referenced object: **`/DMO/I_TRAVEL_U`**
