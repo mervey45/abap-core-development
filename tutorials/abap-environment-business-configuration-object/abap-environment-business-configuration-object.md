@@ -47,10 +47,7 @@ You first create the database tables and then use the [ABAP Repository Generator
 
       Click **Next >**. Confirm the basic package properties by clicking **Next >** again.
 
-  3. Enter a new transport request and click **Finish**. If change recording is not enabled, you cannot enter a new transport request. Instead, simply click **Finish**.
-
-      ![Create new Transport Request](p3.png)
-
+  3. If change recording is not enabled, you cannot enter a new transport request. Instead, simply click **Finish**.
 
 ### Create Data Elements
 
@@ -71,9 +68,7 @@ You first create the database tables and then use the [ABAP Repository Generator
 
       Click **Next >**.
 
-  4. Select the previously created transport request and click **Finish**.
-
-      ![Select existing Transport request](e4.png)
+  4. Click **Finish**.
 
   5. Select **`Predefined Type`** as **Category**, **`NUMC`** as **Data type**, 3 as **Length** and enter **`Error Code`** as **Field Labels**:
 
@@ -110,7 +105,7 @@ You first create the database tables and then use the [ABAP Repository Generator
 
       Click **Next >**.
 
-  3. Select a transport request and click **Finish**.
+  3. Click **Finish**.
 
   4. Replace your code as follows. The timestamp fields are used for optimistic concurrency control for [draft processing](https://help.sap.com/docs/btp/sap-abap-restful-application-programming-model/total-etag) and [OData consumer](https://help.sap.com/docs/btp/sap-abap-restful-application-programming-model/optimistic-concurrency-control). If you add the field `CONFIGDEPRECATIONCODE` of type `CONFIG_DEPRECATION_CODE` to the database table, the ABAP generator that you use in step 5 can extend the generated RAP BO to manage the validity of the configuration entries.
 
@@ -120,6 +115,7 @@ You first create the database tables and then use the [ABAP Repository Generator
     @AbapCatalog.tableCategory : #TRANSPARENT
     @AbapCatalog.deliveryClass : #C
     @AbapCatalog.dataMaintenance : #ALLOWED
+    @AbapCatalog.primaryKey.invertedIndividualIndex : true
     define table zerrcode_### {
       key client            : abap.clnt not null;
       key error_code        : z_error_code_### not null;
@@ -141,6 +137,7 @@ You first create the database tables and then use the [ABAP Repository Generator
     @AbapCatalog.tableCategory : #TRANSPARENT
     @AbapCatalog.deliveryClass : #C
     @AbapCatalog.dataMaintenance : #ALLOWED
+    @AbapCatalog.primaryKey.invertedIndividualIndex : true
     define table zerrcodet_### {
       key client            : abap.clnt not null;
       @AbapCatalog.textLanguage
@@ -181,7 +178,7 @@ A [**Business Configuration Maintenance Object**](https://help.sap.com/products/
      ![Select package](bc4.png)     
 
   4. The system generates a proposal for all input fields based on the description of the table by following these [naming conventions](https://help.sap.com/docs/abap-cloud/abap-rap/naming-conventions-for-development-objects?version=sap_btp). If you receive an error message stating that a specific object already exists, change the corresponding name in the wizard.
-  Only if you have an SAP BTP trial account, change the option **Transport selection** to **`No transport`** as you cannot create any customizing transport requests.
+  **Only if you have an SAP BTP trial account**, change the option **Transport selection** to **`No transport`** as you cannot create any customizing transport requests.
 
 
       Click **Next >**.
@@ -190,12 +187,12 @@ A [**Business Configuration Maintenance Object**](https://help.sap.com/products/
 
   5. The list of repository objects that are generated is displayed. Click **Next >**.
 
-  6. Select a transport request and click **Finish**.
+  6. Click **Finish**.
 
-  7. When the generation is complete, the new business configuration maintenance object is displayed. You can find the documentation for the object attributes [here](https://help.sap.com/docs/abap-cloud/abap-development-tools-user-guide/editing-business-configuration-maintenance-objects). In the next tutorial, you will create the necessary authorization objects for using the business configuration maintenance object in the CUBCO app. You can adapt the generated RAP BO to your needs, see also [CDS Annotations for Metadata-Driven UIs](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/9b4aa865c1e84634b6e105173fc3a5e7.html). For example, you can adjust the visibility, positioning, and labels of the fields.
+  7. When the generation is complete, the new business configuration maintenance object is displayed. You can find the documentation for the object attributes [here](https://help.sap.com/docs/abap-cloud/abap-development-tools-user-guide/editing-business-configuration-maintenance-objects). In the next tutorial, you will create the necessary authorization objects for using the business configuration maintenance object in the CUBCO app. You can adapt the generated RAP BO to your needs, see also [CDS Annotations for Metadata-Driven UIs](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/9b4aa865c1e84634b6e105173fc3a5e7.html). For example, you can adjust the visibility, positioning, and labels of the fields. See also this [collection](https://community.sap.com/t5/tag/business%20configuration%20maintenance%20object/tg-p/board-id/technology-blog-sap) of blog posts about advanced functionality you can implement like collaborative draft, sorting and associations.
 
   8. If you have a license for SAP BTP, ABAP environment or you are working in an SAP S/4HANA Cloud, public edition system, you can now set this step to **Done** and continue with the next step **Test yourself**. 
-  Only if you have an SAP BTP trial account, you need to make the following adjustments because you cannot create business user roles. You can then also skip the following tutorial [Provide authorization control for a Business Configuration Maintenance Object](abap-environment-authorization-control) and continue with tutorial [Use Custom Business Configurations app](abap-environment-maintain-bc-app).
+  **Only if you have an SAP BTP trial account**, you need to make the following adjustments because you cannot create business user roles. You can then also skip the following tutorial [Provide authorization control for a Business Configuration Maintenance Object](abap-environment-authorization-control) and continue with tutorial [Use Custom Business Configurations app](abap-environment-maintain-bc-app). In SAP S/4HANA Private Cloud Edition, IAM apps are not available. You can read this [blog](https://community.sap.com/t5/technology-blog-posts-by-sap/custom-business-configurations-f4579-controlling-the-visibility-of-bc/ba-p/14247015) to learn how to create the required PFCG Role in SAP S/4HANA Private Cloud Edition.
       - Edit class `ZBP_I_ERRORCODE###_S`, section **Local Types**. Delete the content of the following methods. Then save and activate the class.
         - `LHC_ZI_ERRORCODE###_S→GET_GLOBAL_AUTHORIZATIONS`
 
