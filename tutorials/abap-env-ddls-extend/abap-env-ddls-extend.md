@@ -4,7 +4,7 @@ auto_validation: true
 time: 30
 tags: [ tutorial>intermediate, programming-tool>abap-development]
 primary_tag: software-product>sap-s-4hana
-author_name: Matthäus Schüle
+author_name: Matthaeus Schuele
 author_profile: https://github.com/MatthaeusSchuele
 ---
 
