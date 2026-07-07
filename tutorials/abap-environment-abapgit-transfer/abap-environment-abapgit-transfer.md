@@ -16,7 +16,7 @@ author_profile: https://github.com/mervey45
 - You have installed the [`abapGit` plugin](abap-install-abapgit-plugin).
 - Generate a personal access token in GitHub, [here](https://github.com/settings/tokens)
 
-
+ 
 ## You will learn  
 - How to create or adapt source code in ABAP instance
 - How to open `abapGit` repositories
